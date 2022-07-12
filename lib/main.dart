@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tanamanku/screens/detail_screen.dart';
+import 'package:tanamanku/screens/login_screen.dart';
+import 'package:tanamanku/screens/mainpage_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -23,8 +27,21 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/login',
+      routes: {
+        '/': (context) {
+          return const MainPageScreen();
+        },
+        '/login': (context) {
+          return const LoginScreen();
+        },
+        '/detail': (context) {
+          return const DetailScreen();
+        }
+      },
     );
   }
 }
