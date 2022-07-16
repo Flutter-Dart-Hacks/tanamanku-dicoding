@@ -248,7 +248,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           top: 20,
                         ),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            // Ambil user input dan navigasi halaman utama
+                            navigasiHalamanUtama();
+                          },
                           style: ElevatedButton.styleFrom(
                             primary: primaryColorGreen,
                             shape: const RoundedRectangleBorder(
@@ -308,4 +311,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+  void navigasiHalamanUtama() {}
 }

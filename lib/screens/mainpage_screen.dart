@@ -5,6 +5,20 @@ class MainPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Scrollbar(
+          child: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.all(16),
+              child: Column(
+                children: const [],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
