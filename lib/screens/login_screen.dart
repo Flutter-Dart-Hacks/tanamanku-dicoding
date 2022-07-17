@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tanamanku/constants.dart';
+import 'package:tanamanku/screens/mainpage_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -250,7 +251,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: ElevatedButton(
                           onPressed: () {
                             // Ambil user input dan navigasi halaman utama
-                            navigasiHalamanUtama();
+                            navigasiSetelahLoginHalamanUtama(context);
                           },
                           style: ElevatedButton.styleFrom(
                             primary: primaryColorGreen,
@@ -312,5 +313,9 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void navigasiHalamanUtama() {}
+  void navigasiSetelahLoginHalamanUtama(BuildContext context) {
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
+      return const MainPageScreen();
+    }), (route) => false);
+  }
 }

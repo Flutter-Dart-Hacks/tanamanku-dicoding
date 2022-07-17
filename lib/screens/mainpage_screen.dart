@@ -6,7 +6,24 @@ class MainPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text(
+          'Tanamanku',
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.refresh,
+              color: Colors.white,
+            ),
+          )
+        ],
+      ),
       body: SafeArea(
         child: Scrollbar(
           child: SingleChildScrollView(
