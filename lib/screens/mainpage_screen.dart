@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanamanku/constants.dart';
 
 class MainPageScreen extends StatelessWidget {
   const MainPageScreen({Key? key}) : super(key: key);
@@ -7,6 +8,7 @@ class MainPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColorGreen,
         title: const Text(
           'Tanamanku',
           style: TextStyle(
