@@ -32,7 +32,17 @@ class MainPageScreen extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.all(16),
               child: Column(
-                children: const [],
+                children: const [
+                  // Card nama pengguna dan selamat datang
+                  Card(
+                    child: ListTile(),
+                  ),
+                  SizedBox(),
+                  // kartu daftar tanaman
+                  Card(
+                    child: ListTile(),
+                  ),
+                ],
               ),
             ),
           ),
