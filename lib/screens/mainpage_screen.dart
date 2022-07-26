@@ -32,15 +32,63 @@ class MainPageScreen extends StatelessWidget {
             child: Container(
               margin: const EdgeInsets.all(16),
               child: Column(
-                children: const [
+                children: [
                   // Card nama pengguna dan selamat datang
                   Card(
-                    child: ListTile(),
+                    color: primaryColorGreen,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'Selamat datang',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            'Berikut daftar tanaman kamu yang perlu dirawat',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  SizedBox(),
+                  const SizedBox(),
                   // kartu daftar tanaman
                   Card(
-                    child: ListTile(),
+                    color: Colors.white,
+                    child: ListTile(
+                      leading: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'resources/images/img_succulent.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      title: const Text('nama tanaman'),
+                      subtitle: Column(
+                        children: const [
+                          Text('Deskripsi tanaman'),
+                          Text('Waktu penyiraman'),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),

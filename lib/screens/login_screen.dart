@@ -54,6 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: Colors.white,
                     child: Column(
                       children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
                         const Text(
                           'Selamat Datang',
                           style: TextStyle(
@@ -249,6 +252,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: double.infinity,
                           margin: const EdgeInsets.only(
                             top: 20,
+                            left: 16,
+                            right: 16,
                           ),
                           child: ElevatedButton(
                             onPressed: () {
@@ -259,7 +264,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               primary: primaryColorGreen,
                               shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
-                                  Radius.circular(20),
+                                  Radius.circular(30),
                                 ),
                               ),
                             ),
@@ -298,6 +303,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   fontWeight: FontWeight.w700,
                                   fontSize: 15,
                                   decoration: TextDecoration.underline,
+                                  decorationColor: primaryColorGreen,
+                                  decorationThickness: 2,
                                   color: primaryColorGreen,
                                 ),
                               ),
