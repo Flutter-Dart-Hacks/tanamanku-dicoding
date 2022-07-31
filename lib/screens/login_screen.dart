@@ -10,6 +10,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   String usernamePengguna = '';
+  String passwordPengguna = '';
   bool isPasswordVisible = false;
   final _textUsernameEditController = TextEditingController(text: '');
   final _textPasswordEditController = TextEditingController(text: '');
@@ -106,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 filled: true,
                                 fillColor: inputFieldBg,
-                                hintText: 'Masukkan email',
+                                hintText: 'Masukkan nama pengguna',
                                 hintStyle: const TextStyle(
                                   color: iconColorLoginGreen,
                                   fontSize: 15,
@@ -143,6 +144,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               keyboardType: TextInputType.text,
                               maxLength: 64,
+                              onEditingComplete: () {
+                                String stringusername =
+                                    _textUsernameEditController.text;
+                                setState(() {
+                                  usernamePengguna = stringusername;
+                                });
+                              },
                             ),
                           ),
                         ),
@@ -228,6 +236,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               keyboardType: TextInputType.text,
                               maxLength: 64,
                               obscureText: !isPasswordVisible,
+                              onEditingComplete: () {
+                                String passwordpengguna =
+                                    _textPasswordEditController.text;
+                                setState(() {
+                                  passwordPengguna = passwordpengguna;
+                                });
+                              },
                             ),
                           ),
                         ),
@@ -248,6 +263,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             )
                           ],
                         ),
+                        // Tombol masuk ke aplikasi
                         Container(
                           width: double.infinity,
                           margin: const EdgeInsets.only(
@@ -323,10 +339,41 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  void validasiIsianPengguna(BuildContext context) {
+    if (usernamePengguna.isNotEmpty) {
+      if (passwordPengguna.isNotEmpty) {
+        navigasiSetelahLoginHalamanUtama(context);
+      } else {
+        showToastPengguna(context, message: 'Isi password dengan benar');
+      }
+    } else {
+      showToastPengguna(context, message: 'Masukkan nama anda');
+    }
+  }
+
   void navigasiSetelahLoginHalamanUtama(BuildContext context) {
     // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
     //   return const MainPageScreen();
     // }), (route) => false);
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+  }
+
+  void showToastPengguna(BuildContext context, {String message = ''}) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        action: SnackBarAction(
+            label: 'OK',
+            textColor: Colors.orange,
+            onPressed: () {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            }),
+      ),
+    );
   }
 }
