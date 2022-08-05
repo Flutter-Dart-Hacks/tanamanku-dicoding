@@ -38,7 +38,7 @@ List<PlantItem> listTanaman = [
         'Tanaman sukulen asal Afrika Selatan. Ia menyukai matahari, tidak perlu sering disiram, sehingga cocok untuk mereka yang tak punya banyak waktu mengurus tanaman.',
     periodeSiram: '4 hari sekali',
     cuaca: 'Panas',
-    srcImg: 'resources/images/img_succulent.png',
+    srcImg: 'resources/images/haworthia.png',
   ),
   PlantItem(
     nama: 'Kaktus',
@@ -46,7 +46,7 @@ List<PlantItem> listTanaman = [
         'Tanaman yang biasa tumbuh di daerah gurun yang panas dengan daun yang telah termodifikasi menjadi duri kaktus dapat hidup di daerah yang kering.',
     periodeSiram: '5 hari sekali',
     cuaca: 'Panas',
-    srcImg: 'resources/images/img_succulent.png',
+    srcImg: 'resources/images/kaktus.png',
   ),
   PlantItem(
     nama: 'Aglonema',
@@ -54,6 +54,6 @@ List<PlantItem> listTanaman = [
         'Tanaman hias dari jenis talas-talasan yang berada di hutan hujan tropis. Tanaman ini menyukai air dan kondisi lingkungan yang lembab.',
     periodeSiram: '2 hari sekali',
     cuaca: 'Hujan',
-    srcImg: 'resources/images/img_succulent.png',
+    srcImg: 'resources/images/aglonema.png',
   ),
 ];
