@@ -30,12 +30,13 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      initialRoute: '/login',
+      // https://docs.flutter.dev/cookbook/navigation
+      initialRoute: LoginScreen.routeName,
       routes: {
-        '/': (context) {
+        MainPageScreen.routeName: (context) {
           return const MainPageScreen();
         },
-        '/login': (context) {
+        LoginScreen.routeName: (context) {
           return const LoginScreen();
         },
         '/detail': (context) {

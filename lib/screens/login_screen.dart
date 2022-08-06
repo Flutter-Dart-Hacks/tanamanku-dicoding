@@ -4,6 +4,8 @@ import 'package:tanamanku/constants.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+  static const String routeName = '/login';
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -274,7 +276,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: ElevatedButton(
                             onPressed: () {
                               // Ambil user input dan navigasi halaman utama
-                              navigasiSetelahLoginHalamanUtama(context);
+                              validasiIsianPengguna(context);
                             },
                             style: ElevatedButton.styleFrom(
                               primary: primaryColorGreen,

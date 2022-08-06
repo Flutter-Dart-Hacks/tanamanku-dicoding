@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tanamanku/constants.dart';
+import 'package:tanamanku/datascreen/login_args.dart';
 import 'package:tanamanku/models/plant_item.dart';
 
 class MainPageScreen extends StatelessWidget {
   const MainPageScreen({Key? key}) : super(key: key);
+
+  static const String routeName = '/';
 
   String getPathGambarCuaca(PlantItem plantItem) {
     String namaCuaca = plantItem.cuaca;
@@ -96,6 +99,9 @@ class MainPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LoginArguments loginArgs =
+        ModalRoute.of(context)?.settings.arguments as LoginArguments;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColorGreen,
