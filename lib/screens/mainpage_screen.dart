@@ -99,8 +99,8 @@ class MainPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoginArguments loginArgs =
-        ModalRoute.of(context)?.settings.arguments as LoginArguments;
+    LoginArguments? loginArgs =
+        ModalRoute.of(context)?.settings.arguments as LoginArguments?;
 
     return Scaffold(
       appBar: AppBar(
@@ -141,16 +141,16 @@ class MainPageScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
-                            'Selamat datang',
-                            style: TextStyle(
+                            'Selamat datang ${loginArgs?.username ?? ""}',
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Berikut daftar tanaman kamu yang perlu dirawat',
                             style: TextStyle(
                               color: Colors.white,

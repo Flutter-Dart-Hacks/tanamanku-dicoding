@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tanamanku/constants.dart';
+import 'package:tanamanku/datascreen/login_args.dart';
+import 'package:tanamanku/screens/mainpage_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -21,6 +23,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     isPasswordVisible = false;
     super.initState();
+    _textUsernameEditController.addListener(saveStateUsernameValue);
+    _textPasswordEditController.addListener(saveStatePasswordValue);
   }
 
   @override
@@ -28,6 +32,20 @@ class _LoginScreenState extends State<LoginScreen> {
     _textUsernameEditController.dispose();
     _textPasswordEditController.dispose();
     super.dispose();
+  }
+
+  void saveStateUsernameValue() {
+    String stringusername = _textUsernameEditController.text;
+    setState(() {
+      usernamePengguna = stringusername;
+    });
+  }
+
+  void saveStatePasswordValue() {
+    String passwordpengguna = _textPasswordEditController.text;
+    setState(() {
+      passwordPengguna = passwordpengguna;
+    });
   }
 
   @override
@@ -146,13 +164,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               keyboardType: TextInputType.text,
                               maxLength: 64,
-                              onEditingComplete: () {
-                                String stringusername =
-                                    _textUsernameEditController.text;
-                                setState(() {
-                                  usernamePengguna = stringusername;
-                                });
-                              },
                             ),
                           ),
                         ),
@@ -238,13 +249,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               keyboardType: TextInputType.text,
                               maxLength: 64,
                               obscureText: !isPasswordVisible,
-                              onEditingComplete: () {
-                                String passwordpengguna =
-                                    _textPasswordEditController.text;
-                                setState(() {
-                                  passwordPengguna = passwordpengguna;
-                                });
-                              },
                             ),
                           ),
                         ),
@@ -276,6 +280,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: ElevatedButton(
                             onPressed: () {
                               // Ambil user input dan navigasi halaman utama
+                              print(passwordPengguna);
+                              print(_textUsernameEditController.text);
                               validasiIsianPengguna(context);
                             },
                             style: ElevatedButton.styleFrom(
@@ -357,7 +363,12 @@ class _LoginScreenState extends State<LoginScreen> {
     // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
     //   return const MainPageScreen();
     // }), (route) => false);
-    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      MainPageScreen.routeName,
+      (route) => false,
+      arguments: LoginArguments(usernamePengguna, passwordPengguna),
+    );
   }
 
   void showToastPengguna(BuildContext context, {String message = ''}) {
