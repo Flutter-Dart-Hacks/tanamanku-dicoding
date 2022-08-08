@@ -83,7 +83,7 @@ class MainPageScreen extends StatelessWidget {
                   trailing: Container(
                     margin: const EdgeInsets.all(1),
                     child: SvgPicture.asset(
-                      getPathGambarCuaca(plantItemSingle),
+                      getPathGambarCuaca(plantItemSelected),
                       fit: BoxFit.contain,
                       width: 24,
                       height: 24,
