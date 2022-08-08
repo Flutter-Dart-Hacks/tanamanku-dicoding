@@ -29,7 +29,8 @@ class MainPageScreen extends StatelessWidget {
       child: ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemBuilder: (context, index) {
+          itemBuilder: (BuildContext context, int index) {
+            PlantItem plantItemSelected = listTanaman[index];
             return Card(
               color: Colors.white,
               child: Container(
@@ -42,13 +43,14 @@ class MainPageScreen extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
-                        plantItemSingle.srcImg,
+                        plantItemSelected.srcImg,
                         fit: BoxFit.cover,
+                        width: 48,
                       ),
                     ),
                   ),
                   title: Text(
-                    plantItemSingle.nama,
+                    plantItemSelected.nama,
                     style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 16,
@@ -61,7 +63,7 @@ class MainPageScreen extends StatelessWidget {
                         height: 3,
                       ),
                       Text(
-                        plantItemSingle.keterangan,
+                        plantItemSelected.keterangan,
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           color: Colors.black54,
@@ -69,7 +71,7 @@ class MainPageScreen extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Siram ${plantItemSingle.periodeSiram}',
+                        'Siram ${plantItemSelected.periodeSiram}',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade900,
@@ -143,7 +145,7 @@ class MainPageScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Selamat datang ${loginArgs?.username ?? ""}',
+                            'Selamat datang ${loginArgs?.username.toUpperCase() ?? ""}',
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,

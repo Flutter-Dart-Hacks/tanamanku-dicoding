@@ -280,8 +280,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: ElevatedButton(
                             onPressed: () {
                               // Ambil user input dan navigasi halaman utama
-                              print(passwordPengguna);
-                              print(_textUsernameEditController.text);
                               validasiIsianPengguna(context);
                             },
                             style: ElevatedButton.styleFrom(
