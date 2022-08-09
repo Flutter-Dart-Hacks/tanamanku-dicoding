@@ -23,7 +23,7 @@ class MainPageScreen extends StatelessWidget {
     }
   }
 
-  createDaftarTanamanList() {
+  Widget createDaftarTanamanList() {
     return Container(
       margin: const EdgeInsets.all(1),
       child: ListView.builder(
@@ -187,71 +187,6 @@ class MainPageScreen extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Card createSingleCard() {
-    return Card(
-      color: Colors.white,
-      child: Container(
-        margin: const EdgeInsets.only(top: 10, right: 4, bottom: 10),
-        child: ListTile(
-          leading: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                plantItemSingle.srcImg,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          title: Text(
-            plantItemSingle.nama,
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 16,
-                color: Colors.grey.shade800),
-          ),
-          subtitle: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 3,
-              ),
-              Text(
-                plantItemSingle.keterangan,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black54,
-                  fontSize: 12,
-                ),
-              ),
-              Text(
-                'Siram ${plantItemSingle.periodeSiram}',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey.shade900,
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-          trailing: Container(
-            margin: const EdgeInsets.all(1),
-            child: SvgPicture.asset(
-              getPathGambarCuaca(plantItemSingle),
-              fit: BoxFit.contain,
-              width: 24,
-              height: 24,
-              color: Colors.grey.shade400,
-            ),
-          ),
-          dense: true,
         ),
       ),
     );
