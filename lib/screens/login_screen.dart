@@ -346,8 +346,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void validasiIsianPengguna(BuildContext context) {
-    if (usernamePengguna.isNotEmpty) {
-      if (passwordPengguna.isNotEmpty) {
+    if (usernamePengguna.trim().isNotEmpty) {
+      if (passwordPengguna.trim().isNotEmpty) {
         navigasiSetelahLoginHalamanUtama(context);
       } else {
         showToastPengguna(context, message: 'Isi password dengan benar');

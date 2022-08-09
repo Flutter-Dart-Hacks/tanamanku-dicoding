@@ -7,7 +7,7 @@ import 'package:tanamanku/models/plant_item.dart';
 class MainPageScreen extends StatelessWidget {
   const MainPageScreen({Key? key}) : super(key: key);
 
-  static const String routeName = '/';
+  static const String routeName = '/home';
 
   String getPathGambarCuaca(PlantItem plantItem) {
     String namaCuaca = plantItem.cuaca;
