@@ -283,7 +283,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               validasiIsianPengguna(context);
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: primaryColorGreen,
+                              backgroundColor: primaryColorGreen,
                               shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(30),
