@@ -5,7 +5,7 @@ Membuat aplikasi desain untuk Dicoding Submission dengan patokan dari desain Beh
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application. Install this requirement.
 
 A few resources to get you started if this is your first Flutter project:
 
