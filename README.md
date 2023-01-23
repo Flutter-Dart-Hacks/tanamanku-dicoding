@@ -1,7 +1,7 @@
 # Aplikasi Tanamanku Flutter
 
 Membuat aplikasi desain untuk Dicoding Submission dengan patokan dari desain Behance di bawah ini.
-[https://www.behance.net/gallery/144881067/Plant-Care-App](https://www.behance.net/gallery/144881067/Plant-Care-App)
+[https://www.behance.net/gallery/144881067/Plant-Care-App](https://www.behance.net/gallery/144881067/Plant-Care-App) . Dimodifikasi agar sesuai dengan Flutter 3.x.
 
 ## Getting Started
 
